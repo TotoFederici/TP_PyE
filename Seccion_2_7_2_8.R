@@ -1,0 +1,44 @@
+#---------------- Sección 2.7-2.8 -------------------
+
+agua_banoV20 <- c("Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí")
+agua_banoV31 <- c("Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí")
+agua_banoVZ <- c("Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","No","Sí","Sí","Sí","No","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí","Sí")
+
+tabla_banoV20 <- table(agua_banoV20)
+tabla_banoV31 <- table(agua_banoV31)
+tabla_banoVZ <- table(agua_banoVZ)
+
+porc_banoV20 <- round(tabla_banoV20/sum(tabla_banoV20)*100,3)
+porc_banoV31 <- round(tabla_banoV31/sum(tabla_banoV31)*100,3)
+porc_banoVZ <- round(tabla_banoVZ/sum(tabla_banoVZ)*100,3)
+
+print(paste("Villa 20: porcentaje de viviendas con agua en el baño:",porc_banoV20[2]))
+print(paste("Villa 31: porcentaje de viviendas con agua en el baño:",porc_banoV31[2]))
+print(paste("Villa Zavaleta: porcentaje de viviendas con agua en el baño:",porc_banoVZ[2]))
+
+caliente_banoV20 <- c("termotanque a gas","termotanque a gas","No tengo agua caliente en el baño","No tengo agua caliente en el baño","calefón eléctrico","termotanque a gas","No tengo agua caliente en el baño","termotanque a gas","termotanque a gas","termotanque eléctrico","termotanque a gas","termotanque a gas","termotanque a gas","termotanque a gas","ducha eléctrica","ducha eléctrica","termotanque a gas","No tengo agua caliente en el baño","calefón eléctrico","calefón eléctrico","termotanque a gas","termotanque a gas","No tengo agua caliente en el baño","termotanque a gas","No tengo agua caliente en el baño","calefón eléctrico","ducha eléctrica","termotanque a gas","termotanque a gas","ducha eléctrica","No tengo agua caliente en el baño","termotanque eléctrico","termotanque eléctrico","calefón eléctrico","termotanque a gas","No tengo agua caliente en el baño","termotanque eléctrico","No tengo agua caliente en el baño","termotanque a gas","termotanque eléctrico","ducha eléctrica","ducha eléctrica","No tengo agua caliente en el baño","termotanque a gas","ducha eléctrica","ducha eléctrica","calefón eléctrico","calefón eléctrico","ducha eléctrica","ducha eléctrica","termotanque eléctrico","No tengo agua caliente en el baño","calefón eléctrico","termotanque a gas","calefón eléctrico","calefón eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","ducha eléctrica","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","calefón eléctrico","ducha eléctrica","termotanque a gas","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","calefón eléctrico","termotanque a gas","termotanque a gas","calefón eléctrico","termotanque a gas","termotanque a gas","termotanque a gas","No tengo agua caliente en el baño","No tengo agua caliente en el baño","termotanque a gas","termotanque a gas","calefón eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","calefón eléctrico") 
+caliente_tablaV20 <- table(caliente_banoV20)
+porc_calienteV20 <- round(caliente_tablaV20 / sum(caliente_tablaV20)*100,3)
+opcionesV20 <- c("calefón eléctrico","ducha eléctrica","No tiene agua caliente", "termotanque a gas","termotanque eléctrico")
+labelsV20 <- paste(opcionesV20,porc_calienteV20,c("%"),sep = " ")
+pie(caliente_tablaV20,labels = labelsV20,clockwise = TRUE,
+    main = strsplit("Villa 20: tipo de acceso al agua caliente en el baño\n Grafico de sectores circulares",split = ";"),
+    col = c("magenta","purple","blue","seagreen","lightblue"))
+
+caliente_banoV31 <- c("termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","calefón eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","calefón eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","termotanque eléctrico","calefón eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","termotanque eléctrico","No tengo agua caliente en el baño","termotanque eléctrico","No tengo agua caliente en el baño","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","calefón eléctrico","termotanque eléctrico","ducha eléctrica","ducha eléctrica","No tengo agua caliente en el baño","ducha eléctrica","ducha eléctrica","calefón eléctrico","ducha eléctrica","ducha eléctrica","calefón eléctrico","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","calefón eléctrico","termotanque eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","No tengo agua caliente en el baño","ducha eléctrica","ducha eléctrica","calefón eléctrico","ducha eléctrica","ducha eléctrica","termotanque eléctrico","No tengo agua caliente en el baño","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","ducha eléctrica","ducha eléctrica","ducha eléctrica","ducha eléctrica","termotanque eléctrico","ducha eléctrica","termotanque eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","termotanque a gas","ducha eléctrica","No tengo agua caliente en el baño","calefón eléctrico","calefón eléctrico","ducha eléctrica","calefón eléctrico")
+caliente_tablaV31 <- table(caliente_banoV31)
+porc_calienteV31 <- round(caliente_tablaV31 / sum(caliente_tablaV31)*100,3)
+opcionesV31 <- c("calefón eléctrico","ducha eléctrica","No tiene agua caliente", "termotanque a gas","termotanque eléctrico")
+labelsV31 <- paste(opcionesV31,porc_calienteV31,c("%"),sep = " ")
+pie(caliente_tablaV31,labels = labelsV31,clockwise = TRUE,
+    main = strsplit("Villa 31: tipo de acceso al agua caliente en el baño\n Grafico de sectores circulares",split = ";"),
+    col = c("magenta","purple","blue","seagreen","lightblue"))
+
+caliente_banoVZ <- c("calefón eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","termotanque eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","ducha eléctrica","termotanque a gas","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño")
+caliente_tablaVZ <- table(caliente_banoVZ)
+porc_calienteVZ <- round(caliente_tablaVZ / sum(caliente_tablaVZ)*100,3)
+opcionesVZ <- c("calefón eléctrico","ducha eléctrica","No tiene agua caliente", "termotanque a gas","termotanque eléctrico\n")
+labelsVZ <- paste(opcionesVZ,porc_calienteVZ,c("%"),sep = " ")
+pie(caliente_tablaVZ,labels = labelsVZ,clockwise = TRUE,
+    main = strsplit("Villa Zavaleta: tipo de acceso al agua caliente en el baño\n Grafico de sectores circulares",split = ";"),
+    col = c("magenta","purple","blue","seagreen","lightblue"))
