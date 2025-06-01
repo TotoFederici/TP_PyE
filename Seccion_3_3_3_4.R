@@ -2,36 +2,84 @@
 
 veranoV20 <- c("a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes")
 veranofactV20 <- as.factor(veranoV20)
-plot(x = veranofactV20, main = strsplit("Villa 20: Cortes de electricidad en verano \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "purple")
+
+# Calcular proporciones en porcentaje
+tabla_verano20 <- prop.table(table(veranofactV20)) * 100
+
+# Graficar
+barplot(tabla_verano20,
+        main = "Villa 20: Cortes de electricidad en verano\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "orange",
+        ylim = c(0, max(tabla_verano20) + 5))
 
 inviernoV20 <- c("a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales")
 inviernofact20 <- as.factor(inviernoV20)
-plot(x = inviernofact20, main = strsplit("Villa 20: Cortes de electricidad en invierno \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "purple")
+
+# Calcular proporciones en porcentaje
+tabla_invierno20 <- prop.table(table(inviernofact20)) * 100
+
+# Graficar
+barplot(tabla_invierno20,
+        main = "Villa 20: Cortes de electricidad en invierno\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "blue",
+        ylim = c(0, max(tabla_invierno20) + 10))
 
 veranoV31 <- c("a) No son frecuentes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales")
 veranofactV31 <- as.factor(veranoV31)
-plot(x = veranofactV31, main = strsplit("Villa 31: Cortes de electricidad en verano \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "lightblue")
+
+# Calcular proporciones en porcentaje
+tabla_verano31 <- prop.table(table(veranofactV31)) * 100
+
+# Graficar
+barplot(tabla_verano31,
+        main = "Villa 31: Cortes de electricidad en verano\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "orange",
+        ylim = c(0, max(tabla_verano31) + 5))
 
 inviernoV31 <- c("a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","a) No son frecuentes","e) Más de 4 cortes mensuales","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","a) No son frecuentes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes")
 inviernofactV31 <- as.factor(inviernoV31)
-plot(x = inviernofactV31, main = strsplit("Villa 31: Cortes de electricidad en invierno \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "lightblue")
+
+# Calcular proporciones en porcentaje
+tabla_invierno31 <- prop.table(table(inviernofactV31)) * 100
+
+# Graficar
+barplot(tabla_invierno31,
+        main = "Villa 31: Cortes de electricidad en invierno\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "blue",
+        ylim = c(0, max(tabla_invierno31) + 10))
 
 veranoVZ <- c("c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes")
 veranofactVZ <- as.factor(veranoVZ)
-plot(x = veranofactVZ, main = strsplit("Villa Zavaleta: Cortes de electricidad en verano \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "blue")
+
+# Calcular proporciones en porcentaje
+tabla_veranoZ <- prop.table(table(veranofactVZ)) * 100
+
+# Graficar
+barplot(tabla_veranoZ,
+        main = "Villa Z: Cortes de electricidad en verano\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "orange",
+        ylim = c(0, max(tabla_veranoZ) + 5))
 
 inviernoVZ <- c("e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","c) Por lo menos 2 cortes en el mes","b) Por lo menos 1 corte en el mes","b) Por lo menos 1 corte en el mes","e) Más de 4 cortes mensuales","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","c) Por lo menos 2 cortes en el mes","a) No son frecuentes","a) No son frecuentes","a) No son frecuentes","b) Por lo menos 1 corte en el mes","c) Por lo menos 2 cortes en el mes","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","d) Por lo menos 3 cortes en el mes","e) Más de 4 cortes mensuales","e) Más de 4 cortes mensuales","b) Por lo menos 1 corte en el mes","d) Por lo menos 3 cortes en el mes")
 inviernofactVZ <- as.factor(inviernoVZ)
-plot(x = inviernofactVZ, main = strsplit("Villa Zavaleta: Cortes de electricidad en invierno \n grafico de barras", split=";"),
-     xlab = "Cantidad de cortes por mes", ylab = "Frecuencia", 
-     col = "blue")
+
+# Calcular proporciones en porcentaje
+tabla_inviernoZ <- prop.table(table(inviernofactVZ)) * 100
+
+# Graficar
+barplot(tabla_inviernoZ,
+        main = "Villa Z: Cortes de electricidad en invierno\ngráfico de barras",
+        xlab = "Cantidad de cortes por mes",
+        ylab = "Porcentaje",
+        col = "blue",
+        ylim = c(0, max(tabla_inviernoZ) + 10))

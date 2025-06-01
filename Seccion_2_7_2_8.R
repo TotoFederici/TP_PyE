@@ -37,7 +37,7 @@ pie(caliente_tablaV31,labels = labelsV31,clockwise = TRUE,
 caliente_banoVZ <- c("calefón eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","termotanque eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","ducha eléctrica","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño","ducha eléctrica","termotanque a gas","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","No tengo agua caliente en el baño","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","calefón eléctrico","No tengo agua caliente en el baño","No tengo agua caliente en el baño")
 caliente_tablaVZ <- table(caliente_banoVZ)
 porc_calienteVZ <- round(caliente_tablaVZ / sum(caliente_tablaVZ)*100,3)
-opcionesVZ <- c("calefón eléctrico","ducha eléctrica","No tiene agua caliente", "termotanque a gas","termotanque eléctrico\n")
+opcionesVZ <- c("calefón eléctrico","ducha eléctrica","No tiene agua caliente", "\ntermotanque a gas","termotanque eléctrico")
 labelsVZ <- paste(opcionesVZ,porc_calienteVZ,c("%"),sep = " ")
 pie(caliente_tablaVZ,labels = labelsVZ,clockwise = TRUE,
     main = strsplit("Villa Zavaleta: tipo de acceso al agua caliente en el baño\n Grafico de sectores circulares",split = ";"),

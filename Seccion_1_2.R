@@ -15,18 +15,27 @@ promIntV20 <- sum(integrantesV20)/length((integrantesV20))
 promIntV31 <- sum(integrantesV31)/length((integrantesV31))
 promIntVZ <- sum(integrantesVZ)/length((integrantesVZ))
 
+# Tablas en porcentaje
+porcentaje.V20 <- prop.table(tabla.V20) * 100
+porcentaje.V31 <- prop.table(tabla.V31) * 100
+porcentaje.VZ <- prop.table(tabla.VZ) * 100
+
 print(paste("Villa 20: Cantidad de integrantes promedio por vivienda", promIntV20))
 print(paste("Villa 31: Cantidad de integrantes promedio por vivienda", promIntV31))
 print(paste("Villa Zavaleta: Cantidad de integrantes promedio por vivienda", promIntVZ))
 
-plot(tabla.V20,type = "h", main = strsplit("Villa 20: Cantidad de integrantes de la vivienda\nGrafico de bastones",split = ";"),
-     xlab = "Cantidad de integrantes", ylab = "Frecuencia", 
-     col = "purple")
+# Gráficos con porcentajes
+plot(porcentaje.V20, type = "h", 
+     main = "Villa 20: Cantidad de integrantes de la vivienda\nGráfico de bastones",
+     xlab = "Cantidad de integrantes", ylab = "Porcentaje", 
+     col = "purple", ylim = c(0, max(porcentaje.V20) + 5))
 
-plot(tabla.V31,type = "h", main = strsplit("Villa 31: Cantidad de integrantes de la vivienda\nGrafico de bastones",split = ";"),
-     xlab = "Cantidad de integrantes", ylab = "Frecuencia", 
-     col = "seagreen")
+plot(porcentaje.V31, type = "h", 
+     main = "Villa 31: Cantidad de integrantes de la vivienda\nGráfico de bastones",
+     xlab = "Cantidad de integrantes", ylab = "Porcentaje", 
+     col = "seagreen", ylim = c(0, max(porcentaje.V31) + 5))
 
-plot(tabla.VZ,type = "h", main = strsplit("Villa Zavaleta: Cantidad de integrantes de la vivienda\nGrafico de bastones",split = ";"),
-     xlab = "Cantidad de integrantes", ylab = "Frecuencia", 
-     col = "blue")
+plot(porcentaje.VZ, type = "h", 
+     main = "Villa Zavaleta: Cantidad de integrantes de la vivienda\nGráfico de bastones",
+     xlab = "Cantidad de integrantes", ylab = "Porcentaje", 
+     col = "blue", ylim = c(0, max(porcentaje.VZ) + 5))

@@ -20,16 +20,22 @@ litrosV20 <- c("1) 500 lts o más","1) 500 lts o más","2) 200 a 500 lts","2) 20
 litrosV31 <- c("1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","2) 200 a 500 lts","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","2) 200 a 500 lts","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","3) 200 lts o menos","3) 200 lts o menos","1) 500 lts o mas","1) 500 lts o mas","3) 200 lts o menos","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","3) 200 lts o menos","1) 500 lts o mas","3) 200 lts o menos","2) 200 a 500 lts","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","2) 200 a 500 lts","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","3) 200 lts o menos","2) 200 a 500 lts","2) 200 a 500 lts","2) 200 a 500 lts","1) 500 lts o mas","2) 200 a 500 lts","2) 200 a 500 lts")
 litrosVZ <- c("1) 500 lts o mas","1) 500 lts o mas","3) 200 lts o menos","1) 500 lts o mas","2) 200 a 500 lts")
 
-factorV20 <- as.factor(litrosV20)
-factorV31 <- as.factor(litrosV31)
-factorVZ <- as.factor(litrosVZ)
+# Convertir a factor (asegura orden y niveles)
+factorV20 <- factor(litrosV20)
+factorV31 <- factor(litrosV31)
+factorVZ <- factor(litrosVZ)
 
-plot(x = factorV20, main = strsplit("Villa 20: Cantidad de agua que puede almacenar la vivienda en el suministro \n grafico de barras", split=";"),
-     xlab = "Cantidad de agua", ylab = "Frecuencia", 
-     col = "purple")
-plot(x = factorV31, main = strsplit("Villa 31: Cantidad de agua que puede almacenar la vivienda en el suministro \n grafico de barras", split=";"),
-     xlab = "Cantidad de agua", ylab = "Frecuencia", 
-     col = "seagreen")
-plot(x = factorVZ, main = strsplit("Villa Zavaleta: Cantidad de agua que puede almacenar la vivienda en el suministro \n grafico de barras", split=";"),
-     xlab = "Cantidad de agua", ylab = "Frecuencia", 
-     col = "blue")
+# Tablas y porcentajes
+tablaLitrosV20 <- prop.table(table(factorV20)) * 100
+tablaLitrosV31 <- prop.table(table(factorV31)) * 100
+tablaLitrosVZ  <- prop.table(table(factorVZ)) * 100
+
+# Gráficos de barras con porcentajes
+barplot(tablaLitrosV20, main="Villa 20: % de viviendas según capacidad de almacenamiento",
+        ylab="Porcentaje", col="purple", ylim=c(0, max(tablaLitrosV20) + 5))
+
+barplot(tablaLitrosV31, main="Villa 31: % de viviendas según capacidad de almacenamiento",
+        ylab="Porcentaje", col="seagreen", ylim=c(0, max(tablaLitrosV31) + 5))
+
+barplot(tablaLitrosVZ, main="Villa Zavaleta: % de viviendas según capacidad de almacenamiento",
+        ylab="Porcentaje", col="blue", ylim=c(0, max(tablaLitrosVZ) + 5))
